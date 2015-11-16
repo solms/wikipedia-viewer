@@ -30,10 +30,12 @@ $(document).ready(function(){
 				console.log(data);
 				var search_results = data.query.search;
 				var results = [];
+				var link = 'https://en.wikipedia.org/wiki/';
 				for(var i=0; i<search_results.length; i++){
 					results.push({
 						title	: search_results[i].title,
-						snippet	: search_results[i].snippet
+						snippet	: search_results[i].snippet,
+						link	: link+(search_results[i].title).replace(/\s/g, '_')
 					});
 				}
 				updateResults(results);
@@ -45,7 +47,8 @@ $(document).ready(function(){
 function updateResults(results){
 	var html = '<ul>';
 	for(var i=0; i<results.length; i++)
-		html += '<li>'+results[i].title+' <i>('+results[i].snippet+')</i>'+'</li>';
+		html += '<li><a href="'+results[i].link+'">'
+				+results[i].title+'</a> <i>('+results[i].snippet+')</i>'+'</li>';
 	html += '</ul>';
 	$('#results-div').html(html);
 }
