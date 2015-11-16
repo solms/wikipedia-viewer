@@ -6,12 +6,24 @@ html, body{
 }
 
 #search-div{
-	background-color: blue;
+	background-color: #36454f;
 	height: 100%;
 	width: 100%;
 	padding: 15px 0px 15px 25px;
 }
 
 #search{
-	margin-top: 15%;
+	font-size: 30px;
+	color: #FFF;
+	margin-top: 20%;
+	background: transparent;
+    border: none;
+    width: 500px;
+}
+
+#search:focus{
+	outline: none;
+	border-bottom: solid;
+	border-bottom-color: #FFF;
+	border-bottom-width: thin;
 }
