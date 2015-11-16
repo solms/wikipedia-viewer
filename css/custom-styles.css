@@ -1,3 +1,17 @@
-.topcoat-search-input--large{
-	width: 500px;
+html, body{
+	height: 100%;
+	width: 100%;
+	margin: 0px;
+	overflow: hidden;
+}
+
+#search-div{
+	background-color: blue;
+	height: 100%;
+	width: 100%;
+	padding: 15px 0px 15px 25px;
+}
+
+#search{
+	margin-top: 15%;
 }
