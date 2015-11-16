@@ -24,8 +24,10 @@ $(document).ready(function(){
 		}
 
 		if($('#search').val() !== ''){
-			var URL = URL_endpoint+'action=query&titles='+$(this).val();
-			console.log(URL);
+			var URL = 'https://en.wikipedia.org/w/api.php?action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=json'; //URL_endpoint+'action=query&titles='+$(this).val()+'&format=jsonfm';
+			$.getJSON(URL, function(data){
+				console.log(data);
+			});
 		}		
 	});
 });
