@@ -45,10 +45,9 @@ $(document).ready(function(){
 });
 
 function updateResults(results){
-	var html = '<ul>';
+	var html = '';
 	for(var i=0; i<results.length; i++)
-		html += '<li><a href="'+results[i].link+'">'
-				+results[i].title+'</a> <i>('+results[i].snippet+')</i>'+'</li>';
-	html += '</ul>';
+		html += '<a target="_blank" href="'+results[i].link+'"><div class="result"><b>'
+				+results[i].title+'</b><br><i>'+results[i].snippet+')</i></div></a>';
 	$('#results-div').html(html);
 }
