@@ -24,10 +24,28 @@ $(document).ready(function(){
 		}
 
 		if($('#search').val() !== ''){
-			var URL = 'https://en.wikipedia.org/w/api.php?action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=json'; //URL_endpoint+'action=query&titles='+$(this).val()+'&format=jsonfm';
+			var keywords = encodeURI($('#search').val());
+			var URL = 'https://en.wikipedia.org/w/api.php?action=query&list=search&srprop=snippet&srlimit=50&srsearch='+keywords+'&format=json&callback=?';
 			$.getJSON(URL, function(data){
 				console.log(data);
+				var search_results = data.query.search;
+				var results = [];
+				for(var i=0; i<search_results.length; i++){
+					results.push({
+						title	: search_results[i].title,
+						snippet	: search_results[i].snippet
+					});
+				}
+				updateResults(results);
 			});
 		}		
 	});
 });
+
+function updateResults(results){
+	var html = '<ul>';
+	for(var i=0; i<results.length; i++)
+		html += '<li>'+results[i].title+' <i>('+results[i].snippet+')</i>'+'</li>';
+	html += '</ul>';
+	$('#results-div').html(html);
+}
