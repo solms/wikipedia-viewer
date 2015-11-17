@@ -5,7 +5,7 @@ $(document).ready(function(){
 	$('#search').on('input', function(){
 		if(first){
 			$("#search-div").animate({
-		        height: '35px'
+		        'height': '35px'
 		    }, 1000);
 		    $("#search").animate({
 		        'margin-top' : '0px'
@@ -14,7 +14,7 @@ $(document).ready(function(){
 		}
 		else if($('#search').val() == ''){
 			$("#search-div").animate({
-		        height: '100%'
+		        'height': '100%'
 		    }, 1000);
 		    $("#search").animate({
 		        'margin-top' : '20%'

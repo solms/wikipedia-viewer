@@ -2,11 +2,12 @@ html, body{
 	height: 100%;
 	width: 100%;
 	margin: 0px;
-	background-color: #C1E1A6;
+	background-color: #FCF2E6;
+	overflow-x: hidden;
 }
 
 #search-div{
-	background-color: #585858;
+	background-color: #FCF2E6;
 	height: 100%;
 	width: 100%;
 	padding: 15px 0px 15px 25px;
@@ -14,7 +15,7 @@ html, body{
 
 #search{
 	font-size: 30px;
-	color: #FFF;
+	color: #0E0021;
 	margin-top: 20%;
 	background: transparent;
     border: none;
@@ -23,18 +24,16 @@ html, body{
 
 #search:focus{
 	outline: none;
-	border-bottom: solid;
-	border-bottom-color: #FFF;
-	border-bottom-width: thin;
 }
 
 .result{
 	margin: 20px 25px 20px 25px;
-	background-color: white;
-	border-radius: 10px;
-	padding: 5px;
+	background-color: #0E0021;
+	color: #FCF2E6;
+	border-radius: 2px;
+	padding: 25px;
 }
-a .result{
+a{
 	text-decoration: none;
 	color: #FF9009;
 }
