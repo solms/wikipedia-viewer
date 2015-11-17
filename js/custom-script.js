@@ -1,6 +1,8 @@
 var first = true;
 $(document).ready(function(){
 	var URL_endpoint = 'https://en.wikipedia.org/w/api.php?';
+	var URL_commands = 'action=query&list=search&srprop=snippet&srlimit=50&srsearch=';
+	var URL_callback = '&format=json&callback=?';
 	// React to changes in the search box
 	$('#search').on('input', function(){
 		if(first){
@@ -25,7 +27,7 @@ $(document).ready(function(){
 
 		if($('#search').val() !== ''){
 			var keywords = encodeURI($('#search').val());
-			var URL = 'https://en.wikipedia.org/w/api.php?action=query&list=search&srprop=snippet&srlimit=50&srsearch='+keywords+'&format=json&callback=?';
+			var URL = URL_endpoint+URL_commands+keywords+URL_callback;
 			$.getJSON(URL, function(data){
 				var search_results = data.query.search;
 				var results = [];
