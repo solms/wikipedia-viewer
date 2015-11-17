@@ -1,7 +1,7 @@
 var first = true;
 $(document).ready(function(){
 	var URL_endpoint = 'https://en.wikipedia.org/w/api.php?';
-	var URL_commands = 'action=query&list=search&srprop=snippet&srlimit=50&srsearch=';
+	var URL_commands = 'action=query&list=search&srprop=snippet&srlimit=20&srsearch=';
 	var URL_callback = '&format=json&callback=?';
 	// React to changes in the search box
 	$('#search').on('input', function(){
