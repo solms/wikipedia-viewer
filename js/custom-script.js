@@ -27,7 +27,6 @@ $(document).ready(function(){
 			var keywords = encodeURI($('#search').val());
 			var URL = 'https://en.wikipedia.org/w/api.php?action=query&list=search&srprop=snippet&srlimit=50&srsearch='+keywords+'&format=json&callback=?';
 			$.getJSON(URL, function(data){
-				console.log(data);
 				var search_results = data.query.search;
 				var results = [];
 				var link = 'https://en.wikipedia.org/wiki/';
